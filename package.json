@@ -1,0 +1,11 @@
+{
+  "name": "my-portfolio-workspace",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "npm --prefix my-portfolio run dev",
+    "build": "npm --prefix my-portfolio run build",
+    "start": "npm --prefix my-portfolio run start",
+    "lint": "npm --prefix my-portfolio run lint"
+  }
+}
