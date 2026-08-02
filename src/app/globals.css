@@ -115,6 +115,11 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+
+  body.custom-cursor-active,
+  body.custom-cursor-active * {
+    cursor: none !important;
+  }
 }
 
 @layer utilities {
@@ -188,5 +193,50 @@
       black 90%,
       transparent 100%
     );
+  }
+
+  .btn-accent {
+    background: linear-gradient(
+      135deg,
+      var(--accent-strong) 0%,
+      var(--accent) 55%,
+      var(--accent-deep) 100%
+    );
+  }
+
+  .btn-sweep {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+  }
+
+  .btn-sweep::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      135deg,
+      transparent 35%,
+      rgba(255, 255, 255, 0.28) 50%,
+      transparent 65%
+    );
+    transform: translateX(-120%) translateY(-120%);
+    transition: transform 0.65s ease;
+    pointer-events: none;
+  }
+
+  .btn-sweep:hover::after {
+    transform: translateX(120%) translateY(120%);
+  }
+
+  .hover-lift {
+    transition:
+      transform 0.25s ease,
+      box-shadow 0.25s ease;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px var(--glow);
   }
 }

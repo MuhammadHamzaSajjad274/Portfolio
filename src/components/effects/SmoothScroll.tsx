@@ -1,11 +1,59 @@
 "use client";
 
-import type { ReactNode } from "react";
+import { cancelFrame, frame } from "framer-motion";
+import Lenis from "lenis";
+import {
+  createContext,
+  useContext,
+  useEffect,
+  useState,
+  type ReactNode,
+} from "react";
+import { usePrefersReducedMotion } from "@/hooks/usePrefersReducedMotion";
+
+const LenisContext = createContext<Lenis | null>(null);
+
+export function useLenis(): Lenis | null {
+  return useContext(LenisContext);
+}
 
 interface SmoothScrollProps {
   children: ReactNode;
 }
 
 export default function SmoothScroll({ children }: SmoothScrollProps) {
-  return <div className="smooth-scroll">{children}</div>;
+  const reducedMotion = usePrefersReducedMotion();
+  const [lenis, setLenis] = useState<Lenis | null>(null);
+
+  useEffect(() => {
+    if (reducedMotion) {
+      setLenis(null);
+      return;
+    }
+
+    const instance = new Lenis({
+      lerp: 0.1,
+      duration: 1.2,
+      anchors: true,
+    });
+
+    setLenis(instance);
+
+    function update({ timestamp }: { timestamp: number }) {
+      instance.raf(timestamp);
+    }
+
+    frame.update(update, true);
+
+    return () => {
+      frame.update(update, false);
+      cancelFrame(update);
+      instance.destroy();
+      setLenis(null);
+    };
+  }, [reducedMotion]);
+
+  return (
+    <LenisContext.Provider value={lenis}>{children}</LenisContext.Provider>
+  );
 }
