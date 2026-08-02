@@ -5,15 +5,8 @@ import { Menu, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { usePreloader } from "@/components/effects/PreloaderContext";
 import { usePrefersReducedMotion } from "@/hooks/usePrefersReducedMotion";
+import { NAV_LINKS } from "@/lib/motion";
 import { useScrollTo } from "@/hooks/useScrollTo";
-
-const NAV_LINKS = [
-  { label: "About", id: "about" },
-  { label: "Experience", id: "experience" },
-  { label: "Skills", id: "skills" },
-  { label: "Projects", id: "projects" },
-  { label: "Contact", id: "contact" },
-] as const;
 
 export default function Navbar() {
   const { isComplete } = usePreloader();

@@ -3,25 +3,19 @@ export interface Experience {
   role: string;
   company: string;
   location: string;
-  startDate: string;
-  endDate: string | null;
-  description: string;
+  date: string;
   highlights: string[];
-  technologies: string[];
+  badge?: string;
 }
 
 export interface Project {
   id: string;
   title: string;
+  subtitle?: string;
   description: string;
-  longDescription?: string;
-  image: string;
   tags: string[];
-  links: {
-    demo?: string;
-    github?: string;
-    paper?: string;
-  };
+  tech: string[];
+  github: string | null;
   featured: boolean;
 }
 
@@ -35,11 +29,8 @@ export interface EducationEntry {
   id: string;
   degree: string;
   institution: string;
-  location: string;
-  startDate: string;
-  endDate: string;
-  description?: string;
-  gpa?: string;
+  date: string;
+  detail?: string;
 }
 
 export interface Certification {
@@ -50,63 +41,137 @@ export interface Certification {
   credentialUrl?: string;
 }
 
+/** TODO: Replace with your real contact details */
+export const EMAIL = "hamza.sajjad@example.com";
+export const LINKEDIN_URL = "https://linkedin.com/in/your-profile";
+export const GITHUB_URL =
+  "https://github.com/MuhammadHamzaSajjad274";
+
 export const experiences: Experience[] = [
   {
     id: "exp-1",
-    role: "Senior ML Engineer",
-    company: "Company Name",
+    role: "Data Analytics & AI Intern",
+    company: "AFT / Digitt++",
+    location: "Lahore, Pakistan",
+    date: "Jul – Aug 2025",
+    highlights: [
+      "Built an XGBoost ensemble for fintech fraud detection on 100K+ transaction records using SMOTE and SHAP-based feature selection, achieving a 9% uplift in fraud recall.",
+      "Engineered 5+ automated dashboards (Pandas, Matplotlib, Seaborn), reducing manual reporting effort by 40%; insights informed 3 product feature updates.",
+    ],
+  },
+  {
+    id: "exp-2",
+    role: "Machine Learning Intern",
+    company: "Arch Technologies",
     location: "Remote",
-    startDate: "2023-01",
-    endDate: null,
-    description: "Placeholder experience description.",
-    highlights: ["Highlight one", "Highlight two"],
-    technologies: ["Python", "PyTorch", "AWS"],
+    date: "May – Jun 2025",
+    highlights: [
+      "Developed Random Forest and gradient boosting classifiers for business analytics (F1 0.88+) using stratified cross-validation and L2 regularization on imbalanced datasets.",
+    ],
+  },
+  {
+    id: "exp-3",
+    role: "AI & ML Engineering Intern",
+    company: "DevelopersHub Corporation",
+    location: "Remote",
+    date: "Dec 2024 – Feb 2025",
+    badge: "⭐ Best Performance Award",
+    highlights: [
+      "Built automated ML pipelines for classification, regression, and clustering using Scikit-learn and PyTorch, earning Best Performance Award for the internship cohort.",
+    ],
   },
 ];
 
 export const projects: Project[] = [
   {
     id: "proj-1",
-    title: "Project Title",
-    description: "Short project description placeholder.",
-    image: "/placeholder.jpg",
-    tags: ["ML", "NLP"],
-    links: { github: "#", demo: "#" },
+    title: "MedOrch AI",
+    subtitle: "Multi-Agent Medical Assistant",
+    description:
+      "An AI assistant that helps people quickly understand medical questions and get the right guidance — powered by a team of specialized AI agents working together, with voice support and sub-2-second response times.",
+    tags: ["Multi-Agent System", "Voice Interface", "Fast Response Time"],
+    tech: ["LangGraph", "Mistral-7B", "RAG", "FastAPI"],
+    github:
+      "https://github.com/MuhammadHamzaSajjad274/MedOrch-AI-Medical-Decision-Support-System",
     featured: true,
+  },
+  {
+    id: "proj-2",
+    title: "CrisisWatch",
+    subtitle: "Crisis Intelligence & Response System",
+    description:
+      "A system that uses a team of AI agents to monitor, understand, and respond to unfolding crisis events in real time, showing everything on a live interactive map dashboard.",
+    tags: ["Multi-Agent System", "Real-Time Dashboard", "Live Mapping"],
+    tech: ["Gemini", "React", "Leaflet"],
+    github: "https://github.com/MuhammadHamzaSajjad274/CrisisWatch",
+    featured: false,
+  },
+  {
+    id: "proj-3",
+    title: "AI Chatbot with Long-Term Memory",
+    description:
+      "A chatbot that actually remembers past conversations over time, instead of forgetting everything after each chat — with full tracking of how well it performs and the flexibility to run on different AI models.",
+    tags: ["Long-Term Memory", "Multi-Model Support", "Observability"],
+    tech: ["ChromaDB", "MLflow", "Python"],
+    github:
+      "https://github.com/MuhammadHamzaSajjad274/LLM-Powered-AI-Chatbot-with-Memory",
+    featured: false,
+  },
+  {
+    id: "proj-4",
+    title: "EEG-Guided Digital Brain Twin",
+    description:
+      "A research project simulating how the brain might respond to different treatments, using brain activity data — reaching 98% accuracy in predicting outcomes.",
+    tags: ["Research Project", "Generative Modeling", "Healthcare AI"],
+    tech: ["CVAE", "ChemBERTa", "Python"],
+    github: null,
+    featured: false,
   },
 ];
 
 export const skillCategories: SkillCategory[] = [
   {
     id: "skills-1",
-    name: "Machine Learning",
-    skills: ["PyTorch", "TensorFlow", "Scikit-learn"],
+    name: "AI & Machine Learning",
+    skills: [
+      "PyTorch",
+      "TensorFlow",
+      "Scikit-learn",
+      "Deep Learning",
+      "Computer Vision",
+    ],
   },
   {
     id: "skills-2",
-    name: "Languages",
-    skills: ["Python", "TypeScript", "SQL"],
+    name: "LLMs & GenAI",
+    skills: [
+      "LangChain",
+      "LangGraph",
+      "RAG",
+      "Prompt Engineering",
+      "Fine-tuning",
+    ],
+  },
+  {
+    id: "skills-3",
+    name: "Data & Retrieval",
+    skills: ["ChromaDB", "Vector Databases", "Pandas", "SQL"],
+  },
+  {
+    id: "skills-4",
+    name: "Engineering & Deployment",
+    skills: ["Python", "FastAPI", "Docker", "MLflow", "Git", "CI/CD"],
   },
 ];
 
 export const education: EducationEntry[] = [
   {
     id: "edu-1",
-    degree: "M.S. Computer Science",
-    institution: "University Name",
-    location: "City, Country",
-    startDate: "2019",
-    endDate: "2021",
-    description: "Placeholder education description.",
+    degree: "B.Sc. Artificial Intelligence",
+    institution: "University of Wah",
+    date: "2022 – 2026",
+    detail: "CGPA 3.4/4.0",
   },
 ];
 
-export const certifications: Certification[] = [
-  {
-    id: "cert-1",
-    name: "Certification Name",
-    issuer: "Issuing Organization",
-    date: "2024-06",
-    credentialUrl: "#",
-  },
-];
+export const certifications: Certification[] = [];

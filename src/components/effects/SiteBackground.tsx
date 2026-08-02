@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { usePrefersReducedMotion } from "@/hooks/usePrefersReducedMotion";
 
 interface Particle {
@@ -11,23 +11,22 @@ interface Particle {
   delay: number;
 }
 
-function createParticles(): Particle[] {
-  return Array.from({ length: 8 }, (_, id) => ({
-    id,
-    left: `${8 + Math.random() * 84}%`,
-    top: `${8 + Math.random() * 84}%`,
-    duration: 4 + Math.random() * 5,
-    delay: Math.random() * 6,
-  }));
-}
+const PARTICLES: Particle[] = [
+  { id: 0, left: "14%", top: "22%", duration: 5.2, delay: 0.4 },
+  { id: 1, left: "72%", top: "18%", duration: 6.8, delay: 1.6 },
+  { id: 2, left: "38%", top: "64%", duration: 4.6, delay: 2.8 },
+  { id: 3, left: "84%", top: "48%", duration: 7.4, delay: 0.9 },
+  { id: 4, left: "26%", top: "78%", duration: 5.9, delay: 3.5 },
+  { id: 5, left: "58%", top: "34%", duration: 6.2, delay: 1.2 },
+  { id: 6, left: "91%", top: "72%", duration: 4.9, delay: 4.1 },
+  { id: 7, left: "46%", top: "88%", duration: 7.1, delay: 2.3 },
+];
 
 export default function SiteBackground() {
   const reducedMotion = usePrefersReducedMotion();
   const spotlightRef = useRef<HTMLDivElement>(null);
   const mouseRef = useRef({ x: 50, y: 50 });
   const rafRef = useRef<number>(0);
-
-  const particles = useMemo(() => createParticles(), []);
 
   useEffect(() => {
     if (reducedMotion) return;
@@ -102,7 +101,7 @@ export default function SiteBackground() {
       />
 
       {!reducedMotion &&
-        particles.map((particle) => (
+        PARTICLES.map((particle) => (
           <span
             key={particle.id}
             className="absolute h-px w-px animate-float rounded-full bg-accent/40"
