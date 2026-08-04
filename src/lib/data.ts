@@ -16,6 +16,8 @@ export interface Project {
   tags: string[];
   tech: string[];
   github: string | null;
+  liveUrl?: string;
+  videoUrl?: string;
   featured: boolean;
 }
 
@@ -93,6 +95,8 @@ export const projects: Project[] = [
     tech: ["LangGraph", "Mistral-7B", "RAG", "FastAPI"],
     github:
       "https://github.com/MuhammadHamzaSajjad274/MedOrch-AI-Medical-Decision-Support-System",
+    videoUrl:
+      "https://github.com/user-attachments/assets/fee62239-e2e7-49ff-a909-ff8996924f2a",
     featured: true,
   },
   {
@@ -104,6 +108,8 @@ export const projects: Project[] = [
     tags: ["Multi-Agent System", "Real-Time Dashboard", "Live Mapping"],
     tech: ["Gemini", "React", "Leaflet"],
     github: "https://github.com/MuhammadHamzaSajjad274/CrisisWatch",
+    videoUrl:
+      "https://github.com/user-attachments/assets/fcc8f95c-ba37-4e59-8001-0b572588b331",
     featured: false,
   },
   {
@@ -115,6 +121,7 @@ export const projects: Project[] = [
     tech: ["ChromaDB", "MLflow", "Python"],
     github:
       "https://github.com/MuhammadHamzaSajjad274/LLM-Powered-AI-Chatbot-with-Memory",
+    liveUrl: "https://hamza-llm-chatbot.streamlit.app/",
     featured: false,
   },
   {

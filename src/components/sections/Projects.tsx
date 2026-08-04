@@ -1,11 +1,84 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, Play } from "lucide-react";
 import SectionHeader from "./SectionHeader";
-import { projects } from "@/lib/data";
+import { projects, type Project } from "@/lib/data";
 import { REVEAL_EASE, VIEWPORT } from "@/lib/motion";
 import { usePrefersReducedMotion } from "@/hooks/usePrefersReducedMotion";
+
+function ProjectActions({ project }: { project: Project }) {
+  const hasGithub = Boolean(project.github);
+  const hasLive = Boolean(project.liveUrl);
+  const hasVideo = Boolean(project.videoUrl);
+
+  if (!hasGithub && !hasLive && !hasVideo) {
+    return (
+      <p className="text-sm text-muted">
+        Research Project — code available on request
+      </p>
+    );
+  }
+
+  return (
+    <div className="flex flex-wrap items-center gap-3">
+      {hasLive && (
+        <a
+          href={project.liveUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          data-cursor="link"
+          data-cursor-text="Live"
+          className="btn-accent btn-sweep hover-lift inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium text-background"
+        >
+          Visit Live Site
+          <ExternalLink size={14} />
+        </a>
+      )}
+
+      {hasVideo && (
+        <a
+          href={project.videoUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          data-cursor="link"
+          data-cursor-text="Demo"
+          className="glass hover-lift inline-flex items-center gap-2 rounded-full border border-surface-border-strong px-4 py-2 text-sm font-medium text-foreground"
+        >
+          Watch Demo
+          <Play size={14} className="fill-current" />
+        </a>
+      )}
+
+      {hasGithub &&
+        (hasLive ? (
+          <a
+            href={project.github!}
+            target="_blank"
+            rel="noopener noreferrer"
+            data-cursor="link"
+            data-cursor-text="GitHub"
+            className="glass hover-lift inline-flex items-center gap-2 rounded-full border border-surface-border-strong px-4 py-2 text-sm font-medium text-foreground"
+          >
+            View on GitHub
+            <ExternalLink size={14} />
+          </a>
+        ) : (
+          <a
+            href={project.github!}
+            target="_blank"
+            rel="noopener noreferrer"
+            data-cursor="link"
+            data-cursor-text="GitHub"
+            className="inline-flex items-center gap-2 text-sm text-accent transition-colors hover:text-accent-strong"
+          >
+            View on GitHub
+            <ExternalLink size={14} />
+          </a>
+        ))}
+    </div>
+  );
+}
 
 export default function Projects() {
   const reducedMotion = usePrefersReducedMotion();
@@ -83,23 +156,7 @@ export default function Projects() {
                 </p>
 
                 <div className="mt-5">
-                  {project.github ? (
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      data-cursor="link"
-                      data-cursor-text="GitHub"
-                      className="inline-flex items-center gap-2 text-sm text-accent transition-colors hover:text-accent-strong"
-                    >
-                      View on GitHub
-                      <ExternalLink size={14} />
-                    </a>
-                  ) : (
-                    <p className="text-sm text-muted">
-                      Research Project — code available on request
-                    </p>
-                  )}
+                  <ProjectActions project={project} />
                 </div>
               </div>
             </div>
