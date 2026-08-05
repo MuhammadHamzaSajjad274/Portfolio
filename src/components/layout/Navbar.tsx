@@ -14,7 +14,7 @@ export default function Navbar() {
   const scrollTo = useScrollTo();
 
   const [scrolled, setScrolled] = useState(false);
-  const [activeSection, setActiveSection] = useState<string>("about");
+  const [activeSection, setActiveSection] = useState<string>("");
   const [menuOpen, setMenuOpen] = useState(false);
   const ratiosRef = useRef<Map<string, number>>(new Map());
 
@@ -26,9 +26,14 @@ export default function Navbar() {
   }, []);
 
   useEffect(() => {
-    const sections = NAV_LINKS.map((link) =>
+    const navSections = NAV_LINKS.map((link) =>
       document.getElementById(link.id),
     ).filter(Boolean) as HTMLElement[];
+
+    const heroSection = document.getElementById("hero");
+    const sections = heroSection
+      ? [heroSection, ...navSections]
+      : navSections;
 
     if (sections.length === 0) return;
 
@@ -49,7 +54,7 @@ export default function Navbar() {
         });
 
         if (bestRatio > 0) {
-          setActiveSection(bestId);
+          setActiveSection(bestId === "hero" ? "" : bestId);
         }
       },
       {

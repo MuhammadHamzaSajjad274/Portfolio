@@ -43,11 +43,9 @@ export interface Certification {
   credentialUrl?: string;
 }
 
-/** TODO: Replace with your real contact details */
-export const EMAIL = "hamza.sajjad@example.com";
-export const LINKEDIN_URL = "https://linkedin.com/in/your-profile";
-export const GITHUB_URL =
-  "https://github.com/MuhammadHamzaSajjad274";
+export const EMAIL = "hamzasajjad293@gmail.com";
+export const LINKEDIN_URL = "https://www.linkedin.com/in/m-hamza-s-7166a0268";
+export const GITHUB_URL = "https://github.com/MuhammadHamzaSajjad274";
 
 export const experiences: Experience[] = [
   {
@@ -168,6 +166,11 @@ export const skillCategories: SkillCategory[] = [
     id: "skills-4",
     name: "Engineering & Deployment",
     skills: ["Python", "FastAPI", "Docker", "MLflow", "Git", "CI/CD"],
+  },
+  {
+    id: "skills-5",
+    name: "Frontend",
+    skills: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
   },
 ];
 

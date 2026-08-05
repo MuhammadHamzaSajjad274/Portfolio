@@ -11,13 +11,6 @@ import RoleRotator from "./RoleRotator";
 
 const TAGS = ["RAG", "Multi-Agent Systems", "LLM Fine-tuning", "Deep Learning"];
 
-const FLOATING_LABELS = [
-  { text: "PyTorch", className: "top-[8%] -left-2 md:-left-6" },
-  { text: "0.98 AUC", className: "top-[38%] -right-3 md:-right-8" },
-  { text: "Multi-Agent", className: "bottom-[28%] -left-4 md:-left-10" },
-  { text: "Sub-2s Latency", className: "bottom-[10%] -right-2 md:-right-6" },
-];
-
 const REVEAL_EASE = [0.22, 1, 0.36, 1] as const;
 
 interface AnimatedLineProps {
@@ -230,32 +223,6 @@ export default function Hero() {
               />
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent" />
             </div>
-
-            {FLOATING_LABELS.map((label, index) => (
-              <motion.span
-                key={label.text}
-                initial={
-                  reducedMotion ? { opacity: 0 } : { opacity: 0, scale: 0.85, y: 12 }
-                }
-                animate={
-                  isComplete
-                    ? reducedMotion
-                      ? { opacity: 1 }
-                      : { opacity: 1, scale: 1, y: 0 }
-                    : reducedMotion
-                      ? { opacity: 0 }
-                      : { opacity: 0, scale: 0.85, y: 12 }
-                }
-                transition={{
-                  duration: 0.5,
-                  delay: reducedMotion ? 0 : 0.7 + index * 0.12,
-                  ease: REVEAL_EASE,
-                }}
-                className={`glass absolute ${label.className} rounded-full px-3 py-1.5 font-mono text-[10px] tracking-wider text-muted-strong uppercase`}
-              >
-                {label.text}
-              </motion.span>
-            ))}
           </div>
         </FadeUp>
       </div>

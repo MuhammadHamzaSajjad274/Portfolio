@@ -38,8 +38,9 @@ export default function Skills() {
               {category.skills.map((skill) => (
                 <li
                   key={skill}
-                  className="rounded-full border border-surface-border bg-surface/50 px-3 py-1 text-sm text-muted-strong"
+                  className="group inline-flex items-center gap-2 rounded-full border border-surface-border bg-surface px-3 py-1 text-sm text-muted-strong transition-colors duration-300 hover:border-surface-border-strong hover:text-accent-strong"
                 >
+                  <span className="h-1.5 w-1.5 scale-100 rounded-full bg-accent transition-transform duration-300 group-hover:scale-150" />
                   {skill}
                 </li>
               ))}

@@ -16,6 +16,8 @@ export default function Footer() {
           <div className="max-w-sm">
             <button
               type="button"
+              data-cursor="link"
+              data-cursor-text="Top"
               onClick={() => scrollTo("top")}
               className="font-display text-xl text-foreground"
             >

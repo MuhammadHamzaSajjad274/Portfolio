@@ -10,7 +10,7 @@ const STATS = [
   { value: 3, suffix: "+", label: "Internships" },
   { value: 4, suffix: "", label: "Projects Built" },
   { value: 98, suffix: "%", label: "Best Model Accuracy" },
-  { value: 1, suffix: "", label: "National Finalist" },
+  { value: 1, suffix: "", label: "Huawei ICT — Nat. Round" },
 ] as const;
 
 export default function About() {
