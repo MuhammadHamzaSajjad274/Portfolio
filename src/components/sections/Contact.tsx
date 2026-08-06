@@ -27,7 +27,7 @@ export default function Contact() {
   const reducedMotion = usePrefersReducedMotion();
 
   return (
-    <section id="contact" className="section-container py-24 md:py-32">
+    <section id="contact" className="section-container py-16 md:py-24">
       <SectionHeader
         eyebrow="Contact"
         heading="Let's build something together."

@@ -22,7 +22,7 @@ export default function Experience() {
     <section
       id="experience"
       ref={sectionRef}
-      className="section-container py-24 md:py-32"
+      className="section-container py-16 md:py-24"
     >
       <SectionHeader
         eyebrow="Experience"

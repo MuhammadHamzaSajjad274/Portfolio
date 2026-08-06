@@ -84,7 +84,7 @@ export default function Projects() {
   const reducedMotion = usePrefersReducedMotion();
 
   return (
-    <section id="projects" className="section-container py-24 md:py-32">
+    <section id="projects" className="section-container py-16 md:py-24">
       <SectionHeader
         eyebrow="Projects"
         heading="Things I've built"

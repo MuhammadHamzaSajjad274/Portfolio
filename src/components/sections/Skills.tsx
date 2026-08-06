@@ -10,7 +10,7 @@ export default function Skills() {
   const reducedMotion = usePrefersReducedMotion();
 
   return (
-    <section id="skills" className="section-container py-24 md:py-32">
+    <section id="skills" className="section-container py-16 md:py-24">
       <SectionHeader
         eyebrow="Skills"
         heading="The stack behind the work"

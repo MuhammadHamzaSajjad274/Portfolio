@@ -104,7 +104,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="section-container relative flex min-h-screen flex-col justify-center pt-28 pb-20 md:pt-32 md:pb-28"
+      className="section-container relative flex min-h-screen flex-col justify-center pt-28 pb-12 md:pt-32 md:pb-12"
     >
       <div className="grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
         <div>

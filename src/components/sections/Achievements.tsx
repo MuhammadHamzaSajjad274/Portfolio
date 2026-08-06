@@ -86,7 +86,7 @@ export default function Achievements() {
   const reducedMotion = usePrefersReducedMotion();
 
   return (
-    <section id="achievements" className="section-container py-24 md:py-32">
+    <section id="achievements" className="section-container py-16 md:py-24">
       <SectionHeader
         eyebrow="Achievements"
         heading="Recognized beyond the classroom."
@@ -111,7 +111,7 @@ export default function Achievements() {
                 ease: REVEAL_EASE,
               }}
               className={`glass-strong flex flex-col rounded-3xl p-6 transition-all duration-300 hover:border-surface-border-strong hover:bg-surface-strong md:p-7 ${
-                isLast ? "md:col-span-2 lg:col-span-3 lg:mx-auto lg:w-full lg:max-w-sm" : ""
+                isLast ? "lg:col-start-2" : ""
               }`}
             >
               <div className="flex items-start justify-between gap-3">

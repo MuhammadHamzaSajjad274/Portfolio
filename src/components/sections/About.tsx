@@ -11,7 +11,7 @@ export default function About() {
   const reducedMotion = usePrefersReducedMotion();
 
   return (
-    <section id="about" className="section-container py-24 md:py-32">
+    <section id="about" className="section-container py-16 md:py-24">
       <SectionHeader
         eyebrow="About"
         heading="Building AI that actually works."

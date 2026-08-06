@@ -13,7 +13,7 @@ export default function Education() {
   if (!entry) return null;
 
   return (
-    <section id="education" className="section-container py-24 md:py-32">
+    <section id="education" className="section-container py-16 md:py-24">
       <SectionHeader eyebrow="Education" heading="Where it started" />
 
       <motion.div
