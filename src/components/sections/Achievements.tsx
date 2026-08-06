@@ -30,7 +30,7 @@ const ACHIEVEMENTS: Achievement[] = [
     icon: Trophy,
     year: "2024",
     category: "National Competition",
-    title: "Outstanding Performance — National Round",
+    title: "Outstanding Performance, National Round",
     issuer: "Huawei ICT Competition 2024-25",
     context:
       "Achieved outstanding performance in the Computing Track at the national round of Huawei ICT Competition, organized by Huawei Technologies Pakistan Pvt Ltd.",
@@ -41,10 +41,10 @@ const ACHIEVEMENTS: Achievement[] = [
     icon: Medal,
     year: "2026",
     category: "Inter-University Competition",
-    title: "Winner — Project Exhibition",
+    title: "Winner, Project Exhibition",
     issuer: "Mega Code War 4.0, HITEC University",
     context:
-      "First place in the Project Exhibition at Mega Code War 4.0 — a competitive inter-university event recognizing innovation, teamwork, and technical excellence.",
+      "First place in the Project Exhibition at Mega Code War 4.0, a competitive inter-university event recognizing innovation, teamwork, and technical excellence.",
     tags: ["1st Place", "Team Event"],
   },
   {
@@ -53,7 +53,7 @@ const ACHIEVEMENTS: Achievement[] = [
     year: "2026",
     category: "Industry Certification",
     title: "Associate AI Engineer for Developers",
-    issuer: "DataCamp — Certificate #837,799",
+    issuer: "DataCamp, Certificate #837,799",
     context:
       "Completed a 26-hour structured program covering applied AI engineering for developers. Verifiable via DataCamp's certification registry.",
     tags: ["AI Engineering", "Verified"],
@@ -63,7 +63,7 @@ const ACHIEVEMENTS: Achievement[] = [
     icon: Code2,
     year: "2025",
     category: "Technical Competition",
-    title: "1st Place — Speed Programming",
+    title: "1st Place, Speed Programming",
     issuer: "TechOn 2025, University of Wah",
     context:
       "Secured first position in the Speed Programming competition at TechOn 2025, the annual flagship tech event of the Department of Computer Science.",
@@ -75,9 +75,9 @@ const ACHIEVEMENTS: Achievement[] = [
     year: "2025",
     category: "Professional Bootcamp",
     title: "Data Analytics Bootcamp",
-    issuer: "Atomcamp — Feb to Apr 2025",
+    issuer: "Atomcamp, Feb to Apr 2025",
     context:
-      "Completed an intensive bootcamp covering Advanced Excel, SQL, Power BI, GIS, and Python for Data Analytics — directly applied in the AFT/Digitt++ internship.",
+      "Completed an intensive bootcamp covering Advanced Excel, SQL, Power BI, GIS, and Python for Data Analytics, directly applied in the AFT/Digitt++ internship.",
     tags: ["Data Analytics", "SQL & Python"],
   },
 ];
@@ -90,7 +90,7 @@ export default function Achievements() {
       <SectionHeader
         eyebrow="Achievements"
         heading="Recognized beyond the classroom."
-        subhead="Competition wins, industry certifications, and technical training — all verified."
+        subhead="Competition wins, industry certifications, and technical training."
         animateHeading
       />
 

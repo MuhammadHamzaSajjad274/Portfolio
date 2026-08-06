@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { Mail } from "lucide-react";
 import { GitHubIcon, LinkedInIcon } from "@/components/icons/SocialIcons";
 import SectionHeader from "./SectionHeader";
 import { EMAIL, GITHUB_URL, LINKEDIN_URL } from "@/lib/data";
@@ -30,7 +31,7 @@ export default function Contact() {
       <SectionHeader
         eyebrow="Contact"
         heading="Let's build something together."
-        subhead="Open to AI/ML engineering roles and interesting collaborations — reach out."
+        subhead="Open to AI/ML engineering roles and interesting collaborations. Reach out."
       />
 
       <motion.div
@@ -52,7 +53,7 @@ export default function Contact() {
         <div className="relative text-center">
           <p className="mx-auto max-w-lg text-base text-muted md:text-lg">
             Whether it&apos;s a full-time role, an internship, or a project
-            worth building — I&apos;d love to hear from you.
+            worth building. I&apos;d love to hear from you.
           </p>
 
           <a
@@ -65,6 +66,20 @@ export default function Contact() {
           </a>
 
           <div className="mt-8 flex flex-wrap justify-center gap-3">
+            <a
+              href={`mailto:${EMAIL}`}
+              data-cursor="link"
+              data-cursor-text="Email"
+              className="glass hover-lift flex items-center gap-3 rounded-full px-4 py-2.5 text-left"
+            >
+              <Mail size={16} className="shrink-0 text-accent" />
+              <span>
+                <span className="block font-mono text-[10px] tracking-wider text-muted uppercase">
+                  Email
+                </span>
+                <span className="block text-sm text-muted-strong">{EMAIL}</span>
+              </span>
+            </a>
             {SOCIAL_LINKS.map((link) => (
               <a
                 key={link.label}

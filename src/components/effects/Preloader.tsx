@@ -3,9 +3,8 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { usePrefersReducedMotion } from "@/hooks/usePrefersReducedMotion";
+import { REVEAL_EASE } from "@/lib/motion";
 import { useMarkPreloaderComplete, usePreloader } from "./PreloaderContext";
-
-const REVEAL_EASE = [0.22, 1, 0.36, 1] as const;
 
 export default function Preloader() {
   const reducedMotion = usePrefersReducedMotion();

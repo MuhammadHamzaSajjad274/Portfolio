@@ -1,17 +1,16 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, FileText } from "lucide-react";
 import Image from "next/image";
 import { useState, type ReactNode } from "react";
 import { usePreloader } from "@/components/effects/PreloaderContext";
 import { usePrefersReducedMotion } from "@/hooks/usePrefersReducedMotion";
 import { useScrollTo } from "@/hooks/useScrollTo";
+import { REVEAL_EASE } from "@/lib/motion";
 import RoleRotator from "./RoleRotator";
 
 const TAGS = ["RAG", "Multi-Agent Systems", "LLM Fine-tuning", "Deep Learning"];
-
-const REVEAL_EASE = [0.22, 1, 0.36, 1] as const;
 
 interface AnimatedLineProps {
   text: string;
@@ -144,11 +143,9 @@ export default function Hero() {
 
           <FadeUp active={isComplete} delay={0.68} reducedMotion={reducedMotion}>
             <p className="mt-6 max-w-xl text-base leading-relaxed text-muted md:text-[17px]">
-              Recently graduated in Artificial Intelligence, building production
-              machine learning models, LLM applications, and multi-agent systems.
-              I&apos;ve built a multi-agent medical assistant with sub-2-second
-              response times and an EEG-based drug simulation model with 0.98
-              ROC-AUC — turning research-grade ideas into working systems.
+              I build LLM applications, multi-agent systems, machine learning
+              models, and intelligent automations. Looking for AI/ML engineering
+              roles, full-time or remote.
             </p>
           </FadeUp>
 
@@ -186,6 +183,17 @@ export default function Hero() {
               >
                 Get in Touch
               </button>
+              <a
+                href="/hamza-sajjad-cv.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-cursor="link"
+                data-cursor-text="CV"
+                className="glass hover-lift inline-flex items-center gap-2 rounded-full border border-surface-border-strong px-6 py-3 text-sm font-medium text-foreground"
+              >
+                <FileText size={16} />
+                View My CV
+              </a>
             </div>
           </FadeUp>
         </div>
@@ -203,7 +211,7 @@ export default function Hero() {
 
           <div className="glass relative overflow-hidden rounded-[2rem] border border-surface-border-strong p-3">
             <div className="relative aspect-[4/5] overflow-hidden rounded-[1.4rem] bg-background-elevated">
-              {/* TODO: Swap in real photo — place file at public/profile.png */}
+              {/* TODO: Swap in real photo at public/profile.png */}
               {!photoLoaded && (
                 <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-accent/15 via-background-elevated to-signal/10">
                   <span className="font-display text-sm tracking-widest text-muted uppercase">

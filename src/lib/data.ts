@@ -43,6 +43,19 @@ export interface Certification {
   credentialUrl?: string;
 }
 
+export interface AboutStat {
+  value: number;
+  suffix: string;
+  label: string;
+}
+
+export const aboutStats: AboutStat[] = [
+  { value: 3, suffix: "+", label: "Internships" },
+  { value: 6, suffix: "+", label: "Projects Built" },
+  { value: 20, suffix: "+", label: "Technologies" },
+  { value: 1, suffix: "", label: "Huawei ICT, Nat. Round" },
+];
+
 export const EMAIL = "hamzasajjad293@gmail.com";
 export const LINKEDIN_URL = "https://www.linkedin.com/in/m-hamza-s-7166a0268";
 export const GITHUB_URL = "https://github.com/MuhammadHamzaSajjad274";
@@ -53,7 +66,7 @@ export const experiences: Experience[] = [
     role: "Data Analytics & AI Intern",
     company: "AFT / Digitt++",
     location: "Lahore, Pakistan",
-    date: "Jul – Aug 2025",
+    date: "Jul to Aug 2025",
     highlights: [
       "Built an XGBoost ensemble for fintech fraud detection on 100K+ transaction records using SMOTE and SHAP-based feature selection, achieving a 9% uplift in fraud recall.",
       "Engineered 5+ automated dashboards (Pandas, Matplotlib, Seaborn), reducing manual reporting effort by 40%; insights informed 3 product feature updates.",
@@ -64,7 +77,7 @@ export const experiences: Experience[] = [
     role: "Machine Learning Intern",
     company: "Arch Technologies",
     location: "Remote",
-    date: "May – Jun 2025",
+    date: "May to Jun 2025",
     highlights: [
       "Developed Random Forest and gradient boosting classifiers for business analytics (F1 0.88+) using stratified cross-validation and L2 regularization on imbalanced datasets.",
     ],
@@ -74,7 +87,7 @@ export const experiences: Experience[] = [
     role: "AI & ML Engineering Intern",
     company: "DevelopersHub Corporation",
     location: "Remote",
-    date: "Dec 2024 – Feb 2025",
+    date: "Dec 2024 to Feb 2025",
     badge: "⭐ Best Performance Award",
     highlights: [
       "Built automated ML pipelines for classification, regression, and clustering using Scikit-learn and PyTorch, earning Best Performance Award for the internship cohort.",
@@ -88,7 +101,7 @@ export const projects: Project[] = [
     title: "MedOrch AI",
     subtitle: "Multi-Agent Medical Assistant",
     description:
-      "An AI assistant that helps people quickly understand medical questions and get the right guidance — powered by a team of specialized AI agents working together, with voice support and sub-2-second response times.",
+      "An AI assistant that helps people quickly understand medical questions and get the right guidance, powered by a team of specialized AI agents working together, with voice support and sub-2-second response times.",
     tags: ["Multi-Agent System", "Voice Interface", "Fast Response Time"],
     tech: ["LangGraph", "Mistral-7B", "RAG", "FastAPI"],
     github:
@@ -114,7 +127,7 @@ export const projects: Project[] = [
     id: "proj-3",
     title: "AI Chatbot with Long-Term Memory",
     description:
-      "A chatbot that actually remembers past conversations over time, instead of forgetting everything after each chat — with full tracking of how well it performs and the flexibility to run on different AI models.",
+      "A chatbot that actually remembers past conversations over time, instead of forgetting everything after each chat, with full tracking of how well it performs and the flexibility to run on different AI models.",
     tags: ["Long-Term Memory", "Multi-Model Support", "Observability"],
     tech: ["ChromaDB", "MLflow", "Python"],
     github:
@@ -126,7 +139,7 @@ export const projects: Project[] = [
     id: "proj-4",
     title: "EEG-Guided Digital Brain Twin",
     description:
-      "A research project simulating how the brain might respond to different treatments, using brain activity data — reaching 98% accuracy in predicting outcomes.",
+      "A research project simulating how the brain might respond to different treatments, using brain activity data, reaching 98% accuracy in predicting outcomes.",
     tags: ["Research Project", "Generative Modeling", "Healthcare AI"],
     tech: ["CVAE", "ChemBERTa", "Python"],
     github: null,
@@ -179,9 +192,10 @@ export const education: EducationEntry[] = [
     id: "edu-1",
     degree: "B.Sc. Artificial Intelligence",
     institution: "University of Wah",
-    date: "2022 – 2026",
+    date: "2022 to 2026",
     detail: "CGPA 3.4/4.0",
   },
 ];
 
+// Achievement data lives in Achievements.tsx. This array is intentionally empty and kept for type compatibility.
 export const certifications: Certification[] = [];

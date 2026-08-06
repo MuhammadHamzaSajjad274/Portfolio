@@ -3,15 +3,9 @@
 import { motion } from "framer-motion";
 import CountUp from "./CountUp";
 import SectionHeader from "./SectionHeader";
+import { aboutStats } from "@/lib/data";
 import { REVEAL_EASE, VIEWPORT } from "@/lib/motion";
 import { usePrefersReducedMotion } from "@/hooks/usePrefersReducedMotion";
-
-const STATS = [
-  { value: 3, suffix: "+", label: "Internships" },
-  { value: 4, suffix: "", label: "Projects Built" },
-  { value: 98, suffix: "%", label: "Best Model Accuracy" },
-  { value: 1, suffix: "", label: "Huawei ICT — Nat. Round" },
-] as const;
 
 export default function About() {
   const reducedMotion = usePrefersReducedMotion();
@@ -20,8 +14,8 @@ export default function About() {
     <section id="about" className="section-container py-24 md:py-32">
       <SectionHeader
         eyebrow="About"
-        heading="Recently graduated. Ready to build."
-        subhead="AI/ML engineer with three internships and a research-grade project behind me — here's the short version."
+        heading="Building AI that actually works."
+        subhead="Multi-agent systems, LLM applications, and machine learning pipelines built to solve real problems."
         animateHeading
       />
 
@@ -34,25 +28,22 @@ export default function About() {
           className="max-w-xl space-y-5 text-base leading-relaxed text-muted md:text-[17px]"
         >
           <p>
-            I&apos;m Hamza Sajjad, a recent Artificial Intelligence graduate
-            from the University of Wah, Pakistan. Over the past few years
-            I&apos;ve completed three internships and built several AI projects
-            — from an assistant that helps patients quickly get the right
-            medical guidance, to a model that predicts how the brain might
-            respond to different treatments.
+            I&apos;m Hamza Sajjad, an Artificial Intelligence graduate with
+            three internships and several AI projects behind me. I&apos;ve built
+            a multi-agent medical assistant that responds in under two seconds, a
+            crisis intelligence system with a live map dashboard, a chatbot with
+            long-term memory, and a generative model that predicts how the brain
+            responds to different treatments.
           </p>
           <p>
-            What draws me to AI is the moment an idea stops being just an
-            experiment and becomes something that actually works — something
-            people can use. I like turning smart ideas into real, working
-            systems, not leaving them as research notebooks.
+            I focus on building things that work in the real world, not just in
+            a notebook. That means testing carefully, building systems that are
+            easy to monitor and improve, and making sure the output is actually
+            useful to the person using it.
           </p>
           <p>
-            Before I trust any result, I test it carefully to make sure it
-            holds up on new, unseen data — and I build things so they&apos;re
-            easy to check, understand, and improve later. I&apos;m just starting
-            out, but I&apos;m looking to keep growing in this space and join a
-            team where I can keep building things that matter.
+            I&apos;m looking to join a team working on serious AI problems where
+            I can keep building, keep learning, and contribute from day one.
           </p>
         </motion.div>
 
@@ -68,7 +59,7 @@ export default function About() {
             className="pointer-events-none absolute inset-0 bg-dots opacity-60"
           />
           <div className="relative grid grid-cols-2 gap-6">
-            {STATS.map((stat, index) => (
+            {aboutStats.map((stat, index) => (
               <motion.div
                 key={stat.label}
                 initial={reducedMotion ? { opacity: 0 } : { opacity: 0, y: 20 }}

@@ -15,7 +15,7 @@ function ProjectActions({ project }: { project: Project }) {
   if (!hasGithub && !hasLive && !hasVideo) {
     return (
       <p className="text-sm text-muted">
-        Research Project — code available on request
+        Research Project. Code available on request
       </p>
     );
   }
@@ -88,7 +88,7 @@ export default function Projects() {
       <SectionHeader
         eyebrow="Projects"
         heading="Things I've built"
-        subhead="University research and independent projects — not client work, but real, working systems."
+        subhead="Research and independent projects built to solve real problems, not just to pass a course."
       />
 
       <div className="grid gap-6 md:grid-cols-2">

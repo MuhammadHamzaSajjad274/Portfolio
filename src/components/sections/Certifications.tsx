@@ -1,3 +1,4 @@
+// This component is intentionally unused. Achievements are rendered in Achievements.tsx instead. Safe to delete after confirming no imports.
 export default function Certifications() {
   return (
     <section id="certifications" className="section-container py-24">
