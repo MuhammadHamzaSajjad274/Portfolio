@@ -5,6 +5,8 @@ export const VIEWPORT = {
   margin: "-80px" as const,
 };
 
+export const NAVBAR_SCROLL_OFFSET = 100;
+
 export const NAV_LINKS = [
   { label: "About", id: "about" },
   { label: "Experience", id: "experience" },

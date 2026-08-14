@@ -10,6 +10,7 @@ import {
   type ReactNode,
 } from "react";
 import { usePrefersReducedMotion } from "@/hooks/usePrefersReducedMotion";
+import { NAVBAR_SCROLL_OFFSET } from "@/lib/motion";
 
 const LenisContext = createContext<Lenis | null>(null);
 
@@ -34,7 +35,9 @@ export default function SmoothScroll({ children }: SmoothScrollProps) {
     const instance = new Lenis({
       lerp: 0.1,
       duration: 1.2,
-      anchors: true,
+      anchors: {
+        offset: -NAVBAR_SCROLL_OFFSET,
+      },
     });
 
     setLenis(instance);

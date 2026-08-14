@@ -2,8 +2,9 @@
 
 import { useCallback } from "react";
 import { useLenis } from "@/components/effects/SmoothScroll";
+import { NAVBAR_SCROLL_OFFSET } from "@/lib/motion";
 
-const NAVBAR_OFFSET = -88;
+const NAVBAR_OFFSET = -NAVBAR_SCROLL_OFFSET;
 
 export function useScrollTo() {
   const lenis = useLenis();
@@ -25,7 +26,11 @@ export function useScrollTo() {
       if (lenis) {
         lenis.scrollTo(element, { offset: NAVBAR_OFFSET });
       } else {
-        element.scrollIntoView({ behavior: "smooth", block: "start" });
+        const top =
+          element.getBoundingClientRect().top +
+          window.scrollY -
+          NAVBAR_SCROLL_OFFSET;
+        window.scrollTo({ top, behavior: "smooth" });
       }
     },
     [lenis],
