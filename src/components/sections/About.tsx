@@ -28,22 +28,19 @@ export default function About() {
           className="max-w-xl space-y-5 text-base leading-relaxed text-muted md:text-[17px]"
         >
           <p>
-            I&apos;m Hamza Sajjad, an Artificial Intelligence graduate with
-            three internships and several AI projects behind me. I&apos;ve built
-            a multi-agent medical assistant that responds in under two seconds, a
-            crisis intelligence system with a live map dashboard, a chatbot with
-            long-term memory, and a generative model that predicts how the brain
-            responds to different treatments.
+            I&apos;m Hamza Sajjad, an Artificial Intelligence graduate who
+            builds AI tools that actually work in the real world. Through three
+            internships, I&apos;ve worked on real projects like fraud detection
+            and automated data reporting, and on my own I&apos;ve built an
+            assistant that helps people get quick answers to medical questions,
+            a system that tracks crisis events in real time, and a chatbot that
+            remembers what you&apos;ve told it.
           </p>
           <p>
-            I focus on building things that work in the real world, not just in
-            a notebook. That means testing carefully, building systems that are
-            easy to monitor and improve, and making sure the output is actually
-            useful to the person using it.
-          </p>
-          <p>
-            I&apos;m looking to join a team working on serious AI problems where
-            I can keep building, keep learning, and contribute from day one.
+            I care about building things that are reliable and genuinely useful,
+            not just impressive on paper. I&apos;m currently looking to join a
+            team where I can keep learning and help build AI that makes a real
+            difference.
           </p>
         </motion.div>
 
