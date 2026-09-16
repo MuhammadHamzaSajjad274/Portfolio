@@ -7,22 +7,18 @@ import { REVEAL_EASE, VIEWPORT } from "@/lib/motion";
 import { usePrefersReducedMotion } from "@/hooks/usePrefersReducedMotion";
 
 const skillIcons: Record<string, string> = {
-  "PyTorch": "pytorch",
-  "TensorFlow": "tensorflow",
-  "Scikit-learn": "scikitlearn",
-  "LangChain": "langchain",
-  "ChromaDB": "chroma",
-  "Pandas": "pandas",
   "Python": "python",
-  "FastAPI": "fastapi",
-  "Docker": "docker",
-  "MLflow": "mlflow",
-  "Git": "git/white",
-  "Next.js": "nextdotjs/white",
-  "React": "react",
-  "TypeScript": "typescript",
   "JavaScript": "javascript",
-  "Tailwind CSS": "tailwindcss",
+  "TypeScript": "typescript",
+  "LangChain": "langchain",
+  "LangGraph": "langchain",
+  "Hugging Face": "huggingface",
+  "OpenAI APIs": "openai/white",
+  "FastAPI": "fastapi",
+  "Flask": "flask/white",
+  "React": "react",
+  "Next.js": "nextdotjs/white",
+  "Node.js": "nodedotjs",
 };
 
 export default function Skills() {
@@ -59,7 +55,7 @@ export default function Skills() {
                 return (
                   <li
                     key={skill}
-                    className="group inline-flex items-center gap-2.5 rounded-full border border-surface-border bg-surface px-4 py-2 text-sm text-muted-strong transition-all duration-300 hover:border-surface-border-strong hover:text-accent-strong hover:bg-surface-elevated hover:-translate-y-0.5 hover:shadow-sm"
+                    className="group inline-flex items-center gap-2.5 rounded-full border border-surface-border bg-surface px-4 py-2 text-sm text-muted-strong transition-all duration-300 hover:border-accent/50 hover:bg-accent/5 hover:text-accent-strong hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(255,255,255,0.15)]"
                   >
                     {iconSlug ? (
                       <img 

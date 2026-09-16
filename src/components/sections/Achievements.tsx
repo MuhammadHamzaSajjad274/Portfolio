@@ -118,7 +118,14 @@ export default function Achievements() {
                     <h3 className="font-display text-xl font-bold text-foreground md:text-2xl">
                       {achievement.title}
                     </h3>
-                    <p className="mt-1 font-mono text-[13px] text-accent uppercase tracking-wide">
+                    <p className="mt-1 flex items-center gap-2 font-mono text-[13px] text-accent uppercase tracking-wide">
+                      {achievement.issuer.includes("Huawei") && (
+                        <img 
+                          src="https://cdn.simpleicons.org/huawei/FF0000" 
+                          alt="Huawei" 
+                          className="h-3.5 w-3.5" 
+                        />
+                      )}
                       {achievement.issuer}
                     </p>
                   </div>
