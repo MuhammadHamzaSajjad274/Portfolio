@@ -112,10 +112,7 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
-  body.custom-cursor-active,
-  body.custom-cursor-active * {
-    cursor: none !important;
-  }
+
 
   section[id] {
     scroll-margin-top: 100px;

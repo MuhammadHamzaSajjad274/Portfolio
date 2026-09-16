@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { DM_Sans, JetBrains_Mono, Syne } from "next/font/google";
-import CustomCursor from "@/components/effects/CustomCursor";
+
 import Preloader from "@/components/effects/Preloader";
 import { PreloaderProvider } from "@/components/effects/PreloaderContext";
 import ScrollProgress from "@/components/effects/ScrollProgress";
@@ -75,7 +75,7 @@ export default function RootLayout({
         />
         <PreloaderProvider>
           <SiteBackground />
-          <CustomCursor />
+
           <ScrollProgress />
           <Preloader />
           <SmoothScroll>{children}</SmoothScroll>
