@@ -50,7 +50,7 @@ export interface AboutStat {
 }
 
 export const aboutStats: AboutStat[] = [
-  { value: 3, suffix: "+", label: "Internships" },
+  { value: 1, suffix: "+ Year", label: "Experience" },
   { value: 6, suffix: "+", label: "Projects Built" },
   { value: 20, suffix: "+", label: "Technologies" },
   { value: 1, suffix: "", label: "Huawei ICT, Nat. Round" },
@@ -97,6 +97,18 @@ export const experiences: Experience[] = [
 
 export const projects: Project[] = [
   {
+    id: "proj-4",
+    title: "EEG-Guided Digital Brain Twin",
+    subtitle: "National Finalist / 1st Prize Winner",
+    description:
+      "A research project simulating how the brain might respond to different treatments, using brain activity data, reaching 98% accuracy in predicting outcomes.",
+    tags: ["Research Project", "Generative Modeling", "Healthcare AI"],
+    tech: ["CVAE", "ChemBERTa", "Python"],
+    github: null,
+    liveUrl: "https://eeg-guided-digital-brain-twin.vercel.app/",
+    featured: false,
+  },
+  {
     id: "proj-1",
     title: "MedOrch AI",
     subtitle: "Multi-Agent Medical Assistant",
@@ -108,19 +120,6 @@ export const projects: Project[] = [
       "https://github.com/MuhammadHamzaSajjad274/MedOrch-AI-Medical-Decision-Support-System",
     videoUrl:
       "https://github.com/user-attachments/assets/fee62239-e2e7-49ff-a909-ff8996924f2a",
-    featured: true,
-  },
-  {
-    id: "proj-2",
-    title: "CrisisWatch",
-    subtitle: "Crisis Intelligence & Response System",
-    description:
-      "A system that uses a team of AI agents to monitor, understand, and respond to unfolding crisis events in real time, showing everything on a live interactive map dashboard.",
-    tags: ["Multi-Agent System", "Real-Time Dashboard", "Live Mapping"],
-    tech: ["Gemini", "React", "Leaflet"],
-    github: "https://github.com/MuhammadHamzaSajjad274/CrisisWatch",
-    videoUrl:
-      "https://github.com/user-attachments/assets/fcc8f95c-ba37-4e59-8001-0b572588b331",
     featured: false,
   },
   {
@@ -136,13 +135,16 @@ export const projects: Project[] = [
     featured: false,
   },
   {
-    id: "proj-4",
-    title: "EEG-Guided Digital Brain Twin",
+    id: "proj-2",
+    title: "CrisisWatch",
+    subtitle: "Crisis Intelligence & Response System",
     description:
-      "A research project simulating how the brain might respond to different treatments, using brain activity data, reaching 98% accuracy in predicting outcomes.",
-    tags: ["Research Project", "Generative Modeling", "Healthcare AI"],
-    tech: ["CVAE", "ChemBERTa", "Python"],
-    github: null,
+      "A system that uses a team of AI agents to monitor, understand, and respond to unfolding crisis events in real time, showing everything on a live interactive map dashboard.",
+    tags: ["Multi-Agent System", "Real-Time Dashboard", "Live Mapping"],
+    tech: ["Gemini", "React", "Leaflet"],
+    github: "https://github.com/MuhammadHamzaSajjad274/CrisisWatch",
+    videoUrl:
+      "https://github.com/user-attachments/assets/fcc8f95c-ba37-4e59-8001-0b572588b331",
     featured: false,
   },
 ];
@@ -183,7 +185,7 @@ export const skillCategories: SkillCategory[] = [
   {
     id: "skills-5",
     name: "Frontend",
-    skills: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+    skills: ["Next.js", "React", "TypeScript", "JavaScript", "Tailwind CSS"],
   },
 ];
 

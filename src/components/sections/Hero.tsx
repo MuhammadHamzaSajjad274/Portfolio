@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ChevronDown, FileText } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import Image from "next/image";
 import { useState, type ReactNode } from "react";
 import { usePreloader } from "@/components/effects/PreloaderContext";
@@ -183,17 +183,6 @@ export default function Hero() {
               >
                 Get in Touch
               </button>
-              <a
-                href="/hamza-sajjad-cv.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                data-cursor="link"
-                data-cursor-text="CV"
-                className="glass hover-lift inline-flex items-center gap-2 rounded-full border border-surface-border-strong px-6 py-3 text-sm font-medium text-foreground"
-              >
-                <FileText size={16} />
-                View My CV
-              </a>
             </div>
           </FadeUp>
         </div>

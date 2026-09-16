@@ -91,7 +91,7 @@ export default function Projects() {
         subhead="Research and independent projects built to solve real problems, not just to pass a course."
       />
 
-      <div className="grid gap-6 md:grid-cols-2">
+      <div className="flex flex-col gap-6">
         {projects.map((project, index) => (
           <motion.article
             key={project.id}
@@ -103,16 +103,10 @@ export default function Projects() {
               delay: index * 0.12,
               ease: REVEAL_EASE,
             }}
-            className={`glass hover-lift group rounded-3xl p-6 transition-shadow md:p-7 ${
-              project.featured ? "md:col-span-2" : ""
-            }`}
+            className="glass hover-lift group rounded-3xl p-6 transition-shadow md:p-7"
           >
             <div
-              className={
-                project.featured
-                  ? "grid gap-6 md:grid-cols-[1.2fr_0.8fr] md:items-start"
-                  : ""
-              }
+              className="grid gap-6 md:grid-cols-[1.2fr_0.8fr] md:items-start"
             >
               <div>
                 <div className="flex flex-wrap items-start justify-between gap-3">
@@ -147,7 +141,7 @@ export default function Projects() {
                 </ul>
               </div>
 
-              <div className={project.featured ? "md:pt-1" : "mt-5"}>
+              <div className="mt-5 md:mt-0 md:pt-1">
                 <p className="font-mono text-[10px] tracking-[0.18em] text-muted uppercase">
                   Tech Stack
                 </p>

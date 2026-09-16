@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import CountUp from "./CountUp";
 import SectionHeader from "./SectionHeader";
-import { aboutStats } from "@/lib/data";
+import { aboutStats, education } from "@/lib/data";
 import { REVEAL_EASE, VIEWPORT } from "@/lib/motion";
 import { usePrefersReducedMotion } from "@/hooks/usePrefersReducedMotion";
 
@@ -45,6 +45,24 @@ export default function About() {
             just impressive on paper. I&apos;m currently looking to join a team where I
             can keep learning and help build AI that makes a real difference.
           </p>
+          
+          <div className="mt-10 md:mt-12">
+            <h3 className="font-display text-xl font-bold text-foreground">Education</h3>
+            {education.map(entry => (
+              <div key={entry.id} className="mt-4 rounded-2xl border border-surface-border bg-surface/40 p-5">
+                <div className="flex flex-wrap items-start justify-between gap-2">
+                  <div>
+                    <h4 className="font-bold text-foreground">{entry.degree}</h4>
+                    <p className="mt-1 text-sm text-muted-strong">{entry.institution}</p>
+                  </div>
+                  <span className="rounded-full border border-surface-border px-3 py-1 font-mono text-[10px] tracking-wider text-muted uppercase">
+                    {entry.date}
+                  </span>
+                </div>
+                {entry.detail && <p className="mt-3 text-sm text-muted">{entry.detail}</p>}
+              </div>
+            ))}
+          </div>
         </motion.div>
 
         <motion.div
