@@ -33,9 +33,8 @@ export default function Skills() {
       />
 
       <div className="relative mt-8">
-        {/* Background ambient glow */}
-        <div className="pointer-events-none absolute left-1/2 top-1/2 h-[80%] w-[80%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent/10 blur-[120px]" />
         
+
         <div className="relative z-10 grid gap-5 sm:grid-cols-2">
           {skillCategories.map((category, index) => (
             <motion.div
@@ -62,13 +61,13 @@ export default function Skills() {
                   return (
                     <li
                       key={skill}
-                      className="group inline-flex items-center gap-2.5 rounded-full border border-surface-border bg-surface px-4 py-2 text-sm text-muted-strong transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:border-accent/60 hover:bg-accent/10 hover:text-accent-strong hover:shadow-[0_0_20px_rgba(224,169,94,0.2)]"
+                      className="group inline-flex items-center gap-2.5 rounded-full border border-surface-border/50 bg-surface/50 px-4 py-2 text-sm text-foreground backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:border-accent/60 hover:bg-accent/10 hover:shadow-[0_0_20px_rgba(224,169,94,0.2)]"
                     >
                       {iconSlug ? (
                         <img 
                           src={`https://cdn.simpleicons.org/${iconSlug}`} 
                           alt={skill} 
-                          className="h-4 w-4 opacity-70 grayscale transition-all duration-300 group-hover:scale-110 group-hover:opacity-100 group-hover:grayscale-0" 
+                          className="h-4 w-4 transition-transform duration-300 group-hover:scale-110" 
                         />
                       ) : (
                         <span className="h-1.5 w-1.5 scale-100 rounded-full bg-accent transition-transform duration-300 group-hover:scale-150" />

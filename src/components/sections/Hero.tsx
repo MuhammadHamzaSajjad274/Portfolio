@@ -193,10 +193,6 @@ export default function Hero() {
           reducedMotion={reducedMotion}
           className="relative mx-auto w-full max-w-md lg:max-w-none"
         >
-          <div
-            aria-hidden
-            className="absolute inset-0 scale-110 rounded-[2rem] bg-[radial-gradient(circle,rgba(224,169,94,0.22)_0%,transparent_68%)] blur-2xl"
-          />
 
           <div className="glass relative overflow-hidden rounded-[2rem] border border-surface-border-strong p-3">
             <div className="relative aspect-[4/5] overflow-hidden rounded-[1.4rem] bg-background-elevated">
