@@ -31,7 +31,7 @@ const ACHIEVEMENTS: Achievement[] = [
     issuer: "Huawei ICT Academy Workshop",
     date: "2024",
     description: "Served on the organizing committee for the Huawei ICT Academy Workshop, facilitating training and technical development sessions.",
-    image: "/workshop.jfif",
+    image: "/workshop.png",
   },
   {
     id: "ach-3",
@@ -39,7 +39,7 @@ const ACHIEVEMENTS: Achievement[] = [
     issuer: "Open House & Job Fair",
     date: "2026",
     description: "Received project award and recognition at the Open House & Job Fair 2026 for technical excellence.",
-    image: "/fyp.jpeg",
+    image: "/fyp.png",
   },
   {
     id: "ach-4",
@@ -47,7 +47,7 @@ const ACHIEVEMENTS: Achievement[] = [
     issuer: "Mega Code War 4.0",
     date: "2026",
     description: "First place in the Project Exhibition at Mega Code War 4.0, a competitive inter-university event recognizing innovation, teamwork, and technical excellence.",
-    image: "/national.jfif",
+    image: "/national.png",
   },
   {
     id: "ach-5",
@@ -55,7 +55,7 @@ const ACHIEVEMENTS: Achievement[] = [
     issuer: "AI & ML Fundamentals",
     date: "2025",
     description: "Acted as an instructor for the AI & ML Fundamentals course, teaching core concepts and practical applications of machine learning.",
-    image: "/ai.jfif",
+    image: "/ai.png",
   },
   {
     id: "ach-6",
@@ -71,7 +71,7 @@ const ACHIEVEMENTS: Achievement[] = [
     issuer: "TECHON 2025",
     date: "2025",
     description: "Secured first position in the Speed Programming competition at TechOn 2025, demonstrating rapid problem-solving and coding skills.",
-    image: "/Speed.jfif",
+    image: "/Speed.png",
   }
 ];
 
