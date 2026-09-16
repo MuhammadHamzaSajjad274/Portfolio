@@ -32,47 +32,55 @@ export default function Skills() {
         subhead="Tools and frameworks I reach for when building AI systems end to end."
       />
 
-      <div className="grid gap-5 sm:grid-cols-2">
-        {skillCategories.map((category, index) => (
-          <motion.div
-            key={category.id}
-            initial={reducedMotion ? { opacity: 0 } : { opacity: 0, y: 32 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={VIEWPORT}
-            transition={{
-              duration: 0.55,
-              delay: index * 0.1,
-              ease: REVEAL_EASE,
-            }}
-            className="glass rounded-3xl p-6 md:p-7"
-          >
-            <h3 className="font-display text-lg font-bold text-foreground md:text-xl">
-              {category.name}
-            </h3>
-            <ul className="mt-4 flex flex-wrap gap-2">
-              {category.skills.map((skill) => {
-                const iconSlug = skillIcons[skill];
-                return (
-                  <li
-                    key={skill}
-                    className="group inline-flex items-center gap-2.5 rounded-full border border-surface-border bg-surface px-4 py-2 text-sm text-muted-strong transition-all duration-300 hover:border-accent/50 hover:bg-accent/5 hover:text-accent-strong hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(255,255,255,0.15)]"
-                  >
-                    {iconSlug ? (
-                      <img 
-                        src={`https://cdn.simpleicons.org/${iconSlug}`} 
-                        alt={skill} 
-                        className="h-4 w-4 transition-transform duration-300 group-hover:scale-110 grayscale group-hover:grayscale-0 opacity-70 group-hover:opacity-100" 
-                      />
-                    ) : (
-                      <span className="h-1.5 w-1.5 scale-100 rounded-full bg-accent transition-transform duration-300 group-hover:scale-150" />
-                    )}
-                    {skill}
-                  </li>
-                );
-              })}
-            </ul>
-          </motion.div>
-        ))}
+      <div className="relative mt-8">
+        {/* Background ambient glow */}
+        <div className="pointer-events-none absolute left-1/2 top-1/2 h-[80%] w-[80%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent/10 blur-[120px]" />
+        
+        <div className="relative z-10 grid gap-5 sm:grid-cols-2">
+          {skillCategories.map((category, index) => (
+            <motion.div
+              key={category.id}
+              initial={reducedMotion ? { opacity: 0 } : { opacity: 0, y: 32 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={VIEWPORT}
+              transition={{
+                duration: 0.55,
+                delay: index * 0.1,
+                ease: REVEAL_EASE,
+              }}
+              className="glass group/card relative overflow-hidden rounded-3xl p-6 transition-all duration-500 hover:-translate-y-2 hover:border-accent/40 hover:shadow-[0_15px_30px_-15px_rgba(224,169,94,0.25)] md:p-7"
+            >
+              {/* Subtle gradient overlay on hover */}
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-accent/10 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover/card:opacity-100" />
+              
+              <h3 className="gradient-text relative z-10 inline-block font-display text-lg font-bold md:text-xl">
+                {category.name}
+              </h3>
+              <ul className="relative z-10 mt-6 flex flex-wrap gap-2.5">
+                {category.skills.map((skill) => {
+                  const iconSlug = skillIcons[skill];
+                  return (
+                    <li
+                      key={skill}
+                      className="group inline-flex items-center gap-2.5 rounded-full border border-surface-border bg-surface px-4 py-2 text-sm text-muted-strong transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:border-accent/60 hover:bg-accent/10 hover:text-accent-strong hover:shadow-[0_0_20px_rgba(224,169,94,0.2)]"
+                    >
+                      {iconSlug ? (
+                        <img 
+                          src={`https://cdn.simpleicons.org/${iconSlug}`} 
+                          alt={skill} 
+                          className="h-4 w-4 opacity-70 grayscale transition-all duration-300 group-hover:scale-110 group-hover:opacity-100 group-hover:grayscale-0" 
+                        />
+                      ) : (
+                        <span className="h-1.5 w-1.5 scale-100 rounded-full bg-accent transition-transform duration-300 group-hover:scale-150" />
+                      )}
+                      {skill}
+                    </li>
+                  );
+                })}
+              </ul>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );
