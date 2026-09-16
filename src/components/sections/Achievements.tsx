@@ -99,10 +99,10 @@ export default function Achievements() {
               delay: index * 0.1,
               ease: REVEAL_EASE,
             }}
-            className="glass hover-lift group rounded-3xl p-6 transition-shadow md:p-7"
+            className="glass hover-lift group rounded-2xl p-5 transition-shadow md:p-6"
           >
-            <div className="grid gap-6 md:grid-cols-[0.8fr_1.2fr] md:items-start lg:grid-cols-[1fr_1.5fr]">
-              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-surface-border bg-surface shadow-sm">
+            <div className="grid gap-5 md:grid-cols-[200px_1fr] md:items-center lg:grid-cols-[260px_1fr] lg:gap-8">
+              <div className="relative aspect-[4/3] w-full shrink-0 overflow-hidden rounded-xl border border-surface-border bg-surface shadow-sm">
                 <Image
                   src={achievement.image}
                   alt={achievement.title}
@@ -131,7 +131,7 @@ export default function Achievements() {
                   {achievement.description}
                 </p>
 
-                <div className="mt-6 md:mt-8">
+                <div className="mt-4 md:mt-5">
                   <a
                     href={achievement.image}
                     target="_blank"
