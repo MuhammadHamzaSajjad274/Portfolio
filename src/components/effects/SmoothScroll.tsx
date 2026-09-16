@@ -33,8 +33,8 @@ export default function SmoothScroll({ children }: SmoothScrollProps) {
     }
 
     const instance = new Lenis({
-      lerp: 0.1,
-      duration: 1.2,
+      lerp: 0.15,
+      duration: 1.0,
       anchors: {
         offset: -NAVBAR_SCROLL_OFFSET,
       },
