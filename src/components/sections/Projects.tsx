@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ExternalLink, Play } from "lucide-react";
+import Image from "next/image";
 import SectionHeader from "./SectionHeader";
 import { projects, type Project } from "@/lib/data";
 import { REVEAL_EASE, VIEWPORT } from "@/lib/motion";
@@ -103,7 +104,7 @@ export default function Projects() {
               delay: index * 0.12,
               ease: REVEAL_EASE,
             }}
-            className="glass hover-lift group rounded-3xl p-6 transition-shadow md:p-7"
+            className="glass hover-lift group rounded-3xl border-2 border-accent/75 p-6 shadow-[0_0_20px_-6px_var(--glow)] transition-shadow md:p-7"
           >
             <div
               className="grid gap-6 md:grid-cols-[1.2fr_0.8fr] md:items-start"
@@ -141,18 +142,44 @@ export default function Projects() {
                 </ul>
               </div>
 
-              <div className="mt-5 md:mt-0 md:pt-1">
-                <p className="font-mono text-[10px] tracking-[0.18em] text-muted uppercase">
-                  Tech Stack
-                </p>
-                <p className="mt-2 text-sm text-muted-strong">
-                  {project.tech.join(" · ")}
-                </p>
+              {project.id === "proj-4" ? (
+                <div className="mt-5 md:mt-0 md:pt-1">
+                  <Image
+                    src="/eeg.png"
+                    alt="EEG-Guided Digital Brain Twin"
+                    width={1639}
+                    height={859}
+                    className="h-auto w-full max-w-[360px] rounded-2xl border border-surface-border object-cover"
+                    sizes="(max-width: 768px) 100vw, 360px"
+                  />
 
-                <div className="mt-5">
-                  <ProjectActions project={project} />
+                  <div className="mt-5">
+                    <p className="font-mono text-[10px] tracking-[0.18em] text-muted uppercase">
+                      Tech Stack
+                    </p>
+                    <p className="mt-2 text-sm text-muted-strong">
+                      {project.tech.join(" · ")}
+                    </p>
+
+                    <div className="mt-5">
+                      <ProjectActions project={project} />
+                    </div>
+                  </div>
                 </div>
-              </div>
+              ) : (
+                <div className="mt-5 md:mt-0 md:pt-1">
+                  <p className="font-mono text-[10px] tracking-[0.18em] text-muted uppercase">
+                    Tech Stack
+                  </p>
+                  <p className="mt-2 text-sm text-muted-strong">
+                    {project.tech.join(" · ")}
+                  </p>
+
+                  <div className="mt-5">
+                    <ProjectActions project={project} />
+                  </div>
+                </div>
+              )}
             </div>
           </motion.article>
         ))}

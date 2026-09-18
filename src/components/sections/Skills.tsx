@@ -1,24 +1,108 @@
 "use client";
 
 import { motion } from "framer-motion";
+import {
+  Brain,
+  Bot,
+  Cpu,
+  Database,
+  Link2,
+  MessageSquare,
+  Network,
+  ScanSearch,
+  Sparkles,
+  Workflow,
+} from "lucide-react";
+import type { ComponentType, CSSProperties } from "react";
+import {
+  SiDocker,
+  SiFastapi,
+  SiFlask,
+  SiGit,
+  SiGooglegemini,
+  SiHuggingface,
+  SiJavascript,
+  SiNodedotjs,
+  SiNextdotjs,
+  SiNumpy,
+  SiPandas,
+  SiPython,
+  SiPytorch,
+  SiReact,
+  SiScikitlearn,
+  SiTailwindcss,
+  SiTensorflow,
+  SiTypescript,
+} from "react-icons/si";
 import SectionHeader from "./SectionHeader";
-import { skillCategories } from "@/lib/data";
+import { skills } from "@/lib/data";
 import { REVEAL_EASE, VIEWPORT } from "@/lib/motion";
 import { usePrefersReducedMotion } from "@/hooks/usePrefersReducedMotion";
 
-const skillIcons: Record<string, string> = {
-  "Python": "python",
-  "JavaScript": "javascript",
-  "TypeScript": "typescript",
-  "LangChain": "langchain",
-  "LangGraph": "langchain",
-  "Hugging Face": "huggingface",
-  "OpenAI APIs": "openai/white",
-  "FastAPI": "fastapi",
-  "Flask": "flask/white",
-  "React": "react",
-  "Next.js": "nextdotjs/white",
-  "Node.js": "nodedotjs",
+type SkillIcon = ComponentType<{
+  className?: string;
+  size?: number;
+  style?: CSSProperties;
+  strokeWidth?: number;
+}>;
+
+const skillIcons: Record<string, SkillIcon> = {
+  python: SiPython,
+  pytorch: SiPytorch,
+  tensorflow: SiTensorflow,
+  "scikit-learn": SiScikitlearn,
+  pandas: SiPandas,
+  numpy: SiNumpy,
+  "machine-learning": Brain,
+  "deep-learning": Cpu,
+  nlp: MessageSquare,
+  "computer-vision": ScanSearch,
+  "generative-ai": Sparkles,
+  llms: MessageSquare,
+  rag: Link2,
+  "ai-agents": Bot,
+  "ai-automation": Workflow,
+  langchain: Link2,
+  langgraph: Network,
+  "hugging-face": SiHuggingface,
+  "openai-apis": Bot,
+  chromadb: Database,
+  gemini: SiGooglegemini,
+  fastapi: SiFastapi,
+  flask: SiFlask,
+  "node-js": SiNodedotjs,
+  sql: Database,
+  "rest-apis": Network,
+  docker: SiDocker,
+  git: SiGit,
+  javascript: SiJavascript,
+  typescript: SiTypescript,
+  react: SiReact,
+  "next-js": SiNextdotjs,
+  "tailwind-css": SiTailwindcss,
+};
+
+const BRAND_COLORS: Record<string, string> = {
+  Python: "#3776AB",
+  PyTorch: "#EE4C2C",
+  TensorFlow: "#FF6F00",
+  "Scikit-learn": "#F7931E",
+  Pandas: "#150458",
+  NumPy: "#4DABCF",
+  Docker: "#2496ED",
+  GitHub: "#FFFFFF",
+  React: "#61DAFB",
+  "Next.js": "#FFFFFF",
+  TypeScript: "#3178C6",
+  JavaScript: "#F7DF1E",
+  "Node.js": "#339933",
+  FastAPI: "#009688",
+  Flask: "#FFFFFF",
+  Git: "#F05032",
+  "Hugging Face": "#FFD21E",
+  "OpenAI APIs": "#FFFFFF",
+  Gemini: "#8E75B2",
+  "Tailwind CSS": "#06B6D4",
 };
 
 export default function Skills() {
@@ -32,54 +116,39 @@ export default function Skills() {
         subhead="Tools and frameworks I reach for when building AI systems end to end."
       />
 
-      <div className="relative mt-8">
-        
+      <div className="mt-8 grid grid-cols-3 gap-4 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6">
+        {skills.map((skill, index) => {
+          const Icon = skillIcons[skill.iconKey];
+          const brandColor = BRAND_COLORS[skill.name] ?? "var(--accent)";
 
-        <div className="relative z-10 grid gap-5 sm:grid-cols-2">
-          {skillCategories.map((category, index) => (
+          return (
             <motion.div
-              key={category.id}
-              initial={reducedMotion ? { opacity: 0 } : { opacity: 0, y: 32 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              key={skill.name}
+              initial={reducedMotion ? { opacity: 0 } : { opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
               viewport={VIEWPORT}
               transition={{
-                duration: 0.55,
-                delay: index * 0.1,
+                duration: 0.4,
+                delay: reducedMotion ? 0 : Math.min(index * 0.03, 0.6),
                 ease: REVEAL_EASE,
               }}
-              className="glass group/card relative overflow-hidden rounded-3xl p-6 transition-all duration-500 hover:-translate-y-2 hover:border-accent/40 hover:shadow-[0_15px_30px_-15px_rgba(224,169,94,0.25)] md:p-7"
+              className="glass group flex aspect-square flex-col items-center justify-center gap-2 rounded-2xl border border-surface-border p-4 transition-all duration-300 hover:-translate-y-1 hover:border-surface-border-strong hover:bg-surface-strong"
             >
-              {/* Subtle gradient overlay on hover */}
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-accent/10 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover/card:opacity-100" />
-              
-              <h3 className="gradient-text relative z-10 inline-block font-display text-lg font-bold md:text-xl">
-                {category.name}
-              </h3>
-              <ul className="relative z-10 mt-6 flex flex-wrap gap-2.5">
-                {category.skills.map((skill) => {
-                  const iconSlug = skillIcons[skill];
-                  return (
-                    <li
-                      key={skill}
-                      className="group inline-flex items-center gap-2.5 rounded-full border border-surface-border/50 bg-surface/50 px-4 py-2 text-sm text-foreground backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:border-accent/60 hover:bg-accent/10 hover:shadow-[0_0_20px_rgba(224,169,94,0.2)]"
-                    >
-                      {iconSlug ? (
-                        <img 
-                          src={`https://cdn.simpleicons.org/${iconSlug}`} 
-                          alt={skill} 
-                          className="h-4 w-4 transition-transform duration-300 group-hover:scale-110" 
-                        />
-                      ) : (
-                        <span className="h-1.5 w-1.5 scale-100 rounded-full bg-accent transition-transform duration-300 group-hover:scale-150" />
-                      )}
-                      {skill}
-                    </li>
-                  );
-                })}
-              </ul>
+              <Icon
+                aria-hidden
+                size={34}
+                style={{ color: brandColor }}
+                className="transition-transform duration-300 group-hover:-translate-y-1"
+              />
+              <span
+                style={{ "--skill-brand-color": brandColor } as CSSProperties}
+                className="text-center font-mono text-xs text-muted transition-colors duration-300 group-hover:text-[var(--skill-brand-color)]"
+              >
+                {skill.name}
+              </span>
             </motion.div>
-          ))}
-        </div>
+          );
+        })}
       </div>
     </section>
   );

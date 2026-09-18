@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import Image from "next/image";
+import { SiGithub } from "react-icons/si";
 import { useState, type ReactNode } from "react";
 import { usePreloader } from "@/components/effects/PreloaderContext";
 import { usePrefersReducedMotion } from "@/hooks/usePrefersReducedMotion";
@@ -183,6 +184,16 @@ export default function Hero() {
               >
                 Get in Touch
               </button>
+              <a
+                href="https://github.com/MuhammadHamzaSajjad274"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-cursor="link"
+                className="glass hover-lift inline-flex items-center gap-2 rounded-full border border-surface-border-strong px-6 py-3 text-sm font-medium text-foreground"
+              >
+                <SiGithub size={16} />
+                GitHub
+              </a>
             </div>
           </FadeUp>
         </div>

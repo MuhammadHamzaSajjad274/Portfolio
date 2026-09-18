@@ -15,7 +15,6 @@ export default function About() {
       <SectionHeader
         eyebrow="About"
         heading="Building AI that actually works."
-        subhead="Multi-agent systems, LLM applications, and machine learning pipelines built to solve real problems."
         animateHeading
       />
 
@@ -28,22 +27,16 @@ export default function About() {
           className="max-w-xl space-y-5 text-base leading-relaxed text-muted md:text-[17px]"
         >
           <p>
-            I&apos;m Hamza Sajjad, an Artificial Intelligence graduate who builds AI tools
-            that actually work in the real world. Through three internships, I&apos;ve
-            worked on real projects like fraud detection and automated data
-            reporting, and on my own I&apos;ve built an assistant that helps people get
-            quick answers to medical questions, a system that tracks crisis events in
-            real time, and a chatbot that remembers what you&apos;ve told it.
+            I&apos;m Hamza Sajjad, an AI Engineer who builds things that actually work.
+            I&apos;ve created a medical assistant that responds in under two seconds, a
+            system that tracks crisis events in real time, and a chatbot that
+            remembers what you tell it, work that&apos;s been recognized nationally,
+            including a strong result at the Huawei ICT Competition and a first-place
+            win at a national tech competition.
           </p>
           <p>
-            My work has also been recognized nationally, including a strong result at
-            the Huawei ICT Competition&apos;s national round, and a first-place win at a
-            national-level tech competition.
-          </p>
-          <p>
-            I care about building things that are reliable and genuinely useful, not
-            just impressive on paper. I&apos;m currently looking to join a team where I
-            can keep learning and help build AI that makes a real difference.
+            I care about AI that&apos;s reliable, not just impressive on paper. I&apos;m
+            looking to join a team where I can keep building things that matter.
           </p>
           
           <div className="mt-10 md:mt-12">

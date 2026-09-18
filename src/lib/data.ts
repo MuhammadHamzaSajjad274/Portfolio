@@ -21,10 +21,9 @@ export interface Project {
   featured: boolean;
 }
 
-export interface SkillCategory {
-  id: string;
+export interface Skill {
   name: string;
-  skills: string[];
+  iconKey: string;
 }
 
 export interface EducationEntry {
@@ -53,7 +52,7 @@ export const aboutStats: AboutStat[] = [
   { value: 1, suffix: "+ Year", label: "Experience" },
   { value: 6, suffix: "+", label: "Projects Built" },
   { value: 20, suffix: "+", label: "Technologies" },
-  { value: 1, suffix: "", label: "Huawei ICT, Nat. Round" },
+  { value: 1, suffix: "+", label: "Huawei ICT, Nat. Round" },
 ];
 
 export const EMAIL = "hamzasajjad293@gmail.com";
@@ -149,55 +148,40 @@ export const projects: Project[] = [
   },
 ];
 
-export const skillCategories: SkillCategory[] = [
-  {
-    id: "skills-1",
-    name: "AI & Machine Learning",
-    skills: [
-      "Machine Learning",
-      "Deep Learning",
-      "NLP",
-      "Computer Vision",
-    ],
-  },
-  {
-    id: "skills-2",
-    name: "GenAI & LLMs",
-    skills: [
-      "Generative AI",
-      "LLMs",
-      "RAG",
-      "AI Agents",
-      "AI Automation",
-      "LangChain",
-      "LangGraph",
-      "Hugging Face",
-      "OpenAI APIs",
-    ],
-  },
-  {
-    id: "skills-3",
-    name: "Backend & APIs",
-    skills: [
-      "Python",
-      "FastAPI",
-      "Flask",
-      "Node.js",
-      "SQL",
-      "REST APIs",
-      "API Integration",
-    ],
-  },
-  {
-    id: "skills-4",
-    name: "Web & Frontend",
-    skills: [
-      "JavaScript",
-      "TypeScript",
-      "React",
-      "Next.js",
-    ],
-  },
+export const skills: Skill[] = [
+  { name: "Python", iconKey: "python" },
+  { name: "PyTorch", iconKey: "pytorch" },
+  { name: "TensorFlow", iconKey: "tensorflow" },
+  { name: "Scikit-learn", iconKey: "scikit-learn" },
+  { name: "Pandas", iconKey: "pandas" },
+  { name: "NumPy", iconKey: "numpy" },
+  { name: "Machine Learning", iconKey: "machine-learning" },
+  { name: "Deep Learning", iconKey: "deep-learning" },
+  { name: "NLP", iconKey: "nlp" },
+  { name: "Computer Vision", iconKey: "computer-vision" },
+  { name: "Generative AI", iconKey: "generative-ai" },
+  { name: "LLMs", iconKey: "llms" },
+  { name: "RAG", iconKey: "rag" },
+  { name: "AI Agents", iconKey: "ai-agents" },
+  { name: "AI Automation", iconKey: "ai-automation" },
+  { name: "LangChain", iconKey: "langchain" },
+  { name: "LangGraph", iconKey: "langgraph" },
+  { name: "Hugging Face", iconKey: "hugging-face" },
+  { name: "OpenAI APIs", iconKey: "openai-apis" },
+  { name: "ChromaDB", iconKey: "chromadb" },
+  { name: "Gemini", iconKey: "gemini" },
+  { name: "FastAPI", iconKey: "fastapi" },
+  { name: "Flask", iconKey: "flask" },
+  { name: "Node.js", iconKey: "node-js" },
+  { name: "SQL", iconKey: "sql" },
+  { name: "REST APIs", iconKey: "rest-apis" },
+  { name: "Docker", iconKey: "docker" },
+  { name: "Git", iconKey: "git" },
+  { name: "JavaScript", iconKey: "javascript" },
+  { name: "TypeScript", iconKey: "typescript" },
+  { name: "React", iconKey: "react" },
+  { name: "Next.js", iconKey: "next-js" },
+  { name: "Tailwind CSS", iconKey: "tailwind-css" },
 ];
 
 export const education: EducationEntry[] = [

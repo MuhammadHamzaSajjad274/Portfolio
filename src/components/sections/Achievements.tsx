@@ -19,7 +19,7 @@ interface Achievement {
 const ACHIEVEMENTS: Achievement[] = [
   {
     id: "ach-1",
-    title: "National Round",
+    title: "National Finalist — Outstanding Performance",
     issuer: "Huawei ICT Competition",
     date: "2024-25",
     description: "Achieved outstanding performance in the Computing Track at the national round of Huawei ICT Competition.",
@@ -99,7 +99,7 @@ export default function Achievements() {
               delay: index * 0.1,
               ease: REVEAL_EASE,
             }}
-            className="glass hover-lift group rounded-2xl p-5 transition-shadow md:p-6"
+            className="glass hover-lift group rounded-2xl border-2 border-accent/75 p-5 shadow-[0_0_20px_-6px_var(--glow)] transition-shadow md:p-6"
           >
             <div className="grid gap-5 md:grid-cols-[200px_1fr] md:items-center lg:grid-cols-[260px_1fr] lg:gap-8">
               <div className="relative aspect-[4/3] w-full shrink-0 overflow-hidden rounded-xl border border-surface-border bg-surface shadow-sm">
